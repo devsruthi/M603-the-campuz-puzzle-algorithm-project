@@ -80,6 +80,48 @@ public class Main {
         System.out.println();
         System.out.println("Result : Total empty seats after Room Optimization (step 3): " + waste3);
         System.out.println();
+
+        Backtracker hunt = new Backtracker(data, rooms, 4000);
+        ArrayList<Booking> finalBooked = hunt.run();
+        ArrayList<Course> unresolved = Backtracker.stillLeft(data, finalBooked);
+
+        System.out.println("STEP 4 : **************** BEST-EFFORT BACKTRACKING ***********************");
+        System.out.println();
+        System.out.println("try leftover classes on any free hour/room; stop at the best partial timetable");
+        System.out.println("(search nodes " + hunt.nodes + ", cap 4000)");
+        System.out.println();
+
+        ArrayList<Booking> show4 = new ArrayList<Booking>(finalBooked);
+        Collections.sort(show4, new Comparator<Booking>() {
+            public int compare(Booking a, Booking b) {
+                return a.course.class_id.compareTo(b.course.class_id);
+            }
+        });
+        for (int i = 0; i < show4.size(); i++) {
+            Booking b = show4.get(i);
+            System.out.println("Scheduled    " + pad(b.course.class_id, 12)
+                    + "  " + pad(b.slot, 16)
+                    + "  " + pad(b.room.room_id, 6)
+                    + "  wasted : " + b.waste);
+        }
+
+        System.out.println();
+        System.out.println("----- CONFLICT REPORT -----");
+        if (unresolved.size() == 0) {
+            System.out.println("all classes scheduled");
+        } else {
+            for (int i = 0; i < unresolved.size(); i++) {
+                Course c = unresolved.get(i);
+                System.out.println("Unscheduled  " + pad(c.class_id, 12)
+                        + "  N/A             N/A     " + hunt.whyLeft(c));
+            }
+            System.out.println();
+            System.out.println("these need a person to free an auditorium slot or add another large hall");
+        }
+        System.out.println();
+        double pct = 100.0 * finalBooked.size() / data.courses.size();
+        System.out.println("final booked: " + finalBooked.size() + " / " + data.courses.size()
+                + "  (" + String.format("%.1f", pct) + "%)");
     }
 
     static String pad(String s, int w) {
