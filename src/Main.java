@@ -8,11 +8,11 @@ public class Main {
         }
 
         DataLoad data = DataLoad.fromFile(path);
-        System.out.println("loaded " + data.courses.size() + " classes, "
+        System.out.println("Loaded Data (json constraints) : " + data.courses.size() + " classes, "
                 + data.rooms.size() + " rooms, "
                 + data.slots.size() + " slots");
         System.out.println();
-        System.out.println("STEP 1 : GREEDY ALGORITHM IMPLEMENTATION ******");
+        System.out.println("STEP 1 : GREEDY BASELINE ******");
         System.out.println("(sorted by - class size, placing the biggest classes first)");
         System.out.println();
 
@@ -24,7 +24,7 @@ public class Main {
             System.out.println(pad(b.course.class_id, 12)
                     + "  " + pad(b.slot, 16)
                     + "  " + pad(b.room.room_id, 6)
-                    + "  waste " + b.waste);
+                    + "  wasted : " + b.waste);
         }
 
         ArrayList<Course> left = GreedySolver.notBooked(data, booked);
@@ -34,10 +34,10 @@ public class Main {
         }
 
         System.out.println();
-        System.out.println("booked " + booked.size() + " / " + data.courses.size()
-                + "   empty seats total " + wasteTotal);
+        System.out.println("Total classes: " + data.courses.size() + " , " + "booked classes: " + booked.size() + " , " 
+                + "total empty seats: " + wasteTotal);
         if (left.size() > 0) {
-            System.out.println("unscheduled: " + left.size() + " classes");
+            System.out.println("unscheduled classes: " + left.size());
         }
     }
 
