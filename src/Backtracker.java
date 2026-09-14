@@ -121,14 +121,14 @@ public class Backtracker {
             }
         }
         if (fitRooms == 0) {
-            return "no hall is large enough";
+            return "no Room/hall is large enough to seat " + c.number_of_enrolled_students + " students!";
         }
         if (!someHourWorks) {
             return "insufficient rooms: only " + fitRooms
                     + " hall(s) seat " + c.number_of_enrolled_students
-                    + " students, and those halls are taken in every timeslot";
+                    + " students,and already taken";
         }
-        return "no legal hour+room left (group/professor clash)";
+        return "no hour+room left (group/professor conflict!)";
     }
 
     private boolean shareGroup(String a, String b) {

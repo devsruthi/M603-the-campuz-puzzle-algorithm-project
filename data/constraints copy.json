@@ -10,11 +10,7 @@
     {"class_id": "PYTHON101", "number_of_enrolled_students": 120, "professor_id": "P-08"},
     {"class_id": "PM101", "number_of_enrolled_students": 100, "professor_id": "P-09"},
     {"class_id": "DB01", "number_of_enrolled_students": 80, "professor_id": "P-10"},
-    {"class_id": "DS01", "number_of_enrolled_students": 60, "professor_id": "P-11"},
-    {"class_id": "STAT01", "number_of_enrolled_students": 230, "professor_id": "P-12"},
-    {"class_id": "NET01", "number_of_enrolled_students": 230, "professor_id": "P-13"},
-    {"class_id": "OS01", "number_of_enrolled_students": 230, "professor_id": "P-14"},
-    {"class_id": "SEC01", "number_of_enrolled_students": 230, "professor_id": "P-15"}
+    {"class_id": "DS01", "number_of_enrolled_students": 60, "professor_id": "P-11"}
   ],
   "rooms": [
     {"room_id": "R-101", "seating_capacity": 260},
@@ -28,7 +24,13 @@
   "timeslots": [
     "Mon-09:00",
     "Mon-11:00",
-    "Mon-14:00"
+    "Mon-14:00",
+    "Wed-09:00",
+    "Wed-11:00",
+    "Wed-14:00",
+    "Fri-09:00",
+    "Fri-11:00",
+    "Fri-14:00"
   ],
   "student_groups": {
     "GroupA": ["DSA101", "MATH101", "AI101"],

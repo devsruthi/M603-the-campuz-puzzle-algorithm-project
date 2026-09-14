@@ -166,6 +166,7 @@ public class GraphEngine {
             System.out.println(pad(data.courses.get(i).class_id, 12) + "  deg " + degree[i] + "  ->  " + list);
         }
         System.out.println();
+        System.out.println();
         System.out.println("2) GREEDY COLOURING");
         System.out.println("--------------------------------");
         System.out.println("hours (colour -> timeslot):");
@@ -181,6 +182,7 @@ public class GraphEngine {
 
         System.out.println();
         System.out.println("class            colour");
+        System.out.println();
         int ok = 0;
         for (int k = 0; k < byName.size(); k++) {
             int i = byName.get(k);
@@ -192,12 +194,15 @@ public class GraphEngine {
         }
 
         System.out.println();
+        System.out.println();
         System.out.println("3) TIMESLOT ALLOCATION");
         System.out.println("--------------------------------");
         for (int k = 0; k < byName.size(); k++) {
             int i = byName.get(k);
             System.out.println(pad(data.courses.get(i).class_id, 16) + "  " + slotOf(i));
         }
+        System.out.println();
+        System.out.println("Unscheduled classes: " + (n - ok));
         System.out.println();
         System.out.println("Result: conflict free hours for (" + ok + " / " + n + ") classes");
         System.out.println();

@@ -39,9 +39,8 @@ public class GreedySolver {
                     break;
                 }
             }
-            // if ok is still false, this class stays unscheduled (no room found)
             if (!ok) {
-                System.out.println("No room found for class " + c.class_id);
+               // System.out.println("No room found for class " + c.class_id);
             }
         }
         return booked;

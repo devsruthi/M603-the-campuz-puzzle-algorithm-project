@@ -40,6 +40,7 @@ public class Main {
         System.out.println("Total classes: " + data.courses.size() + " , " + "booked classes: " + booked.size() + " , " 
                 + "total empty seats: " + wasteTotal);
         if (left.size() > 0) {
+            System.out.println();
             System.out.println("unscheduled classes: " + left.size());
         }
 
@@ -69,11 +70,11 @@ public class Main {
         }
         ArrayList<Course> left3 = Optimizer.notPlaced(data, rooms);
         for (int i = 0; i < left3.size(); i++) {
-            System.out.println(pad(left3.get(i).class_id, 12) + "  LEFT   (no hall left in that hour)");
+            System.out.println(pad(left3.get(i).class_id, 12) + "  UNSCHEDULED   (no Room/hall left in that hour)");
         }
         System.out.println();
         if (left3.size() > 0) {
-            System.out.println("unscheduled classes: " + left3.size());
+            System.out.println("Unscheduled classes: " + left3.size());
             System.out.println();
         }
         System.out.println("empty seats before Room Optimization (step 1): " + wasteTotal);
@@ -85,10 +86,8 @@ public class Main {
         ArrayList<Booking> finalBooked = hunt.run();
         ArrayList<Course> unresolved = Backtracker.stillLeft(data, finalBooked);
 
-        System.out.println("STEP 4 : **************** BEST-EFFORT BACKTRACKING ***********************");
         System.out.println();
-        System.out.println("try leftover classes on any free hour/room; stop at the best partial timetable");
-        System.out.println("(search nodes " + hunt.nodes + ", cap 4000)");
+        System.out.println("STEP 4 : **************** BEST-EFFORT BACKTRACKING ***********************");
         System.out.println();
 
         ArrayList<Booking> show4 = new ArrayList<Booking>(finalBooked);
@@ -106,22 +105,26 @@ public class Main {
         }
 
         System.out.println();
-        System.out.println("----- CONFLICT REPORT -----");
+        System.out.println("---------------- CONFLICT REPORT --------------------------");
+        System.out.println();
         if (unresolved.size() == 0) {
             System.out.println("all classes scheduled");
         } else {
             for (int i = 0; i < unresolved.size(); i++) {
                 Course c = unresolved.get(i);
                 System.out.println("Unscheduled  " + pad(c.class_id, 12)
-                        + "  N/A             N/A     " + hunt.whyLeft(c));
+                        + "  " + hunt.whyLeft(c));
             }
             System.out.println();
-            System.out.println("these need a person to free an auditorium slot or add another large hall");
+            System.out.println("Manual intervention is required to schedule these classes");
         }
         System.out.println();
         double pct = 100.0 * finalBooked.size() / data.courses.size();
-        System.out.println("final booked: " + finalBooked.size() + " / " + data.courses.size()
+        System.out.println("Result : Classes scheduled: " + finalBooked.size() + " / " + data.courses.size()
                 + "  (" + String.format("%.1f", pct) + "%)");
+        System.out.println();
+        System.out.println("Unscheduled classes: " + unresolved.size());
+        System.out.println();
     }
 
     static String pad(String s, int w) {
