@@ -27,8 +27,8 @@
   ],
   "timeslots": [
     "Mon-09:00",
-    "Mon-11:00",
-    "Mon-14:00"
+    "Tue-10:00",
+    "Wed-11:00"
   ],
   "student_groups": {
     "GroupA": ["DSA101", "MATH101", "AI101"],
