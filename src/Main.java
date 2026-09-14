@@ -12,7 +12,8 @@ public class Main {
                 + data.rooms.size() + " rooms, "
                 + data.slots.size() + " slots");
         System.out.println();
-        System.out.println("STEP 1 : GREEDY BASELINE ******");
+        System.out.println("STEP 1 : **************** GREEDY BASELINE ***********************");
+        System.out.println();
         System.out.println("(sorted by - class size, placing the biggest classes first)");
         System.out.println();
 
@@ -39,6 +40,9 @@ public class Main {
         if (left.size() > 0) {
             System.out.println("unscheduled classes: " + left.size());
         }
+
+        GraphEngine graph = new GraphEngine(data);
+        graph.print();
     }
 
     static String pad(String s, int w) {
