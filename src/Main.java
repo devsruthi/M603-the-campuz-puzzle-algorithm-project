@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -43,6 +45,41 @@ public class Main {
 
         GraphEngine graph = new GraphEngine(data);
         graph.print();
+        System.out.println();
+        System.out.println("STEP 3 : **************** ROOM ALLOCATION (min waste ) ***********************");
+        System.out.println();
+        System.out.println("assigning rooms to classes innorder to minimize the empty seats");
+        System.out.println();
+
+        ArrayList<Booking> rooms = Optimizer.run(data, graph);
+        int waste3 = 0;
+        ArrayList<Booking> show = new ArrayList<Booking>(rooms);
+        Collections.sort(show, new Comparator<Booking>() {
+            public int compare(Booking a, Booking b) {
+                return a.course.class_id.compareTo(b.course.class_id);
+            }
+        });
+        for (int i = 0; i < show.size(); i++) {
+            Booking b = show.get(i);
+            waste3 += b.waste;
+            System.out.println(pad(b.course.class_id, 12)
+                    + "  " + pad(b.slot, 16)
+                    + "  " + pad(b.room.room_id, 6)
+                    + "  wasted : " + b.waste);
+        }
+        ArrayList<Course> left3 = Optimizer.notPlaced(data, rooms);
+        for (int i = 0; i < left3.size(); i++) {
+            System.out.println(pad(left3.get(i).class_id, 12) + "  LEFT   (no hall left in that hour)");
+        }
+        System.out.println();
+        if (left3.size() > 0) {
+            System.out.println("unscheduled classes: " + left3.size());
+            System.out.println();
+        }
+        System.out.println("empty seats before Room Optimization (step 1): " + wasteTotal);
+        System.out.println();
+        System.out.println("Result : Total empty seats after Room Optimization (step 3): " + waste3);
+        System.out.println();
     }
 
     static String pad(String s, int w) {
