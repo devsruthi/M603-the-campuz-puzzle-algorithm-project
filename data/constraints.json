@@ -1,25 +1,25 @@
 {
   "classes": [
-    {"class_id": "DSA101", "number_of_enrolled_students": 180, "professor_id": "P001"},
-    {"class_id": "DSA102", "number_of_enrolled_students": 150, "professor_id": "P002"},
-    {"class_id": "MATH101", "number_of_enrolled_students": 200, "professor_id": "P004"},
-    {"class_id": "MATH102", "number_of_enrolled_students": 170, "professor_id": "P005"},
-    {"class_id": "AI101", "number_of_enrolled_students": 100, "professor_id": "P006"},
-    {"class_id": "AI102", "number_of_enrolled_students": 90, "professor_id": "P007"},
-    {"class_id": "JAVA101", "number_of_enrolled_students": 160, "professor_id": "P008"},
-    {"class_id": "PYTHON101", "number_of_enrolled_students": 140, "professor_id": "P009"},
-    {"class_id": "PM101", "number_of_enrolled_students": 130, "professor_id": "P010"},
-    {"class_id": "DB01", "number_of_enrolled_students": 120, "professor_id": "P003"},
-    {"class_id": "DS01", "number_of_enrolled_students": 110, "professor_id": "P011"}
+    {"class_id": "DSA101", "number_of_enrolled_students": 230, "professor_id": "P-01"},
+    {"class_id": "DSA102", "number_of_enrolled_students": 140, "professor_id": "P-02"},
+    {"class_id": "MATH101", "number_of_enrolled_students": 210, "professor_id": "P-03"},
+    {"class_id": "MATH102", "number_of_enrolled_students": 150, "professor_id": "P-04"},
+    {"class_id": "AI101", "number_of_enrolled_students": 50, "professor_id": "P-05"},
+    {"class_id": "AI102", "number_of_enrolled_students": 40, "professor_id": "P-06"},
+    {"class_id": "JAVA101", "number_of_enrolled_students": 180, "professor_id": "P-07"},
+    {"class_id": "PYTHON101", "number_of_enrolled_students": 120, "professor_id": "P-08"},
+    {"class_id": "PM101", "number_of_enrolled_students": 100, "professor_id": "P-09"},
+    {"class_id": "DB01", "number_of_enrolled_students": 80, "professor_id": "P-10"},
+    {"class_id": "DS01", "number_of_enrolled_students": 60, "professor_id": "P-11"}
   ],
   "rooms": [
-    {"room_id": "R-101", "seating_capacity": 250},
-    {"room_id": "R-102", "seating_capacity": 200},
-    {"room_id": "R-103", "seating_capacity": 180},
-    {"room_id": "R-104", "seating_capacity": 150},
-    {"room_id": "R-105", "seating_capacity": 120},
-    {"room_id": "R-106", "seating_capacity": 100},
-    {"room_id": "R-107", "seating_capacity": 80}
+    {"room_id": "R-101", "seating_capacity": 260},
+    {"room_id": "R-102", "seating_capacity": 220},
+    {"room_id": "R-103", "seating_capacity": 190},
+    {"room_id": "R-104", "seating_capacity": 170},
+    {"room_id": "R-105", "seating_capacity": 110},
+    {"room_id": "R-106", "seating_capacity": 70},
+    {"room_id": "R-107", "seating_capacity": 40}
   ],
   "timeslots": [
     "Mon-09:00",
