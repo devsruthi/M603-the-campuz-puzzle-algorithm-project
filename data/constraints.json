@@ -1,0 +1,48 @@
+{
+  "classes": [
+    {"class_id": "DSA101", "number_of_enrolled_students": 180, "professor_id": "P001"},
+    {"class_id": "DSA102", "number_of_enrolled_students": 150, "professor_id": "P002"},
+    {"class_id": "MATH101", "number_of_enrolled_students": 200, "professor_id": "P004"},
+    {"class_id": "MATH102", "number_of_enrolled_students": 170, "professor_id": "P005"},
+    {"class_id": "AI101", "number_of_enrolled_students": 100, "professor_id": "P006"},
+    {"class_id": "AI102", "number_of_enrolled_students": 90, "professor_id": "P007"},
+    {"class_id": "JAVA101", "number_of_enrolled_students": 160, "professor_id": "P008"},
+    {"class_id": "PYTHON101", "number_of_enrolled_students": 140, "professor_id": "P009"},
+    {"class_id": "PM101", "number_of_enrolled_students": 130, "professor_id": "P010"},
+    {"class_id": "DB01", "number_of_enrolled_students": 120, "professor_id": "P003"},
+    {"class_id": "DS01", "number_of_enrolled_students": 110, "professor_id": "P011"}
+  ],
+  "rooms": [
+    {"room_id": "R-101", "seating_capacity": 250},
+    {"room_id": "R-102", "seating_capacity": 200},
+    {"room_id": "R-103", "seating_capacity": 180},
+    {"room_id": "R-104", "seating_capacity": 150},
+    {"room_id": "R-105", "seating_capacity": 120},
+    {"room_id": "R-106", "seating_capacity": 100},
+    {"room_id": "R-107", "seating_capacity": 80}
+  ],
+  "timeslots": [
+    "Mon-09:00",
+    "Mon-11:00",
+    "Mon-14:00",
+    "Tue-09:00",
+    "Tue-11:00",
+    "Tue-14:00",
+    "Wed-09:00",
+    "Wed-11:00",
+    "Wed-14:00",
+    "Thu-09:00",
+    "Thu-11:00",
+    "Thu-14:00",
+    "Fri-09:00",
+    "Fri-11:00",
+    "Fri-14:00"
+  ],
+  "student_groups": {
+    "GroupA": ["DSA101", "MATH101", "AI101"],
+    "GroupB": ["DSA102", "AI102", "JAVA101"],
+    "GroupC": ["DB01", "PM101", "PYTHON101"],
+    "GroupD": ["DSA101", "JAVA101", "DS01"],
+    "GroupE": ["MATH102", "PYTHON101", "DS01"]
+  }
+}
