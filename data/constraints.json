@@ -14,7 +14,8 @@
     {"class_id": "STAT01", "number_of_enrolled_students": 230, "professor_id": "P-12"},
     {"class_id": "NET01", "number_of_enrolled_students": 230, "professor_id": "P-13"},
     {"class_id": "OS01", "number_of_enrolled_students": 230, "professor_id": "P-14"},
-    {"class_id": "SEC01", "number_of_enrolled_students": 230, "professor_id": "P-15"}
+    {"class_id": "SEC01", "number_of_enrolled_students": 230, "professor_id": "P-15"},
+    {"class_id": "WEB01", "number_of_enrolled_students": 230, "professor_id": "P-16"}
   ],
   "rooms": [
     {"room_id": "R-101", "seating_capacity": 260},
@@ -27,14 +28,16 @@
   ],
   "timeslots": [
     "Mon-09:00",
-    "Tue-10:00",
-    "Wed-11:00"
+    "Tue-09:00",
+    "Wed-09:00",
+    "Thu-09:00",
+    "Fri-09:00"
   ],
   "student_groups": {
-    "GroupA": ["DSA101", "MATH101", "AI101"],
-    "GroupB": ["DSA102", "AI102", "JAVA101"],
-    "GroupC": ["DB01", "PM101", "PYTHON101"],
-    "GroupD": ["DSA101", "JAVA101", "DS01"],
-    "GroupE": ["MATH102", "PYTHON101", "DS01"]
+    "Year1_CS": ["DSA101", "MATH101", "AI101"],
+    "Year2_CS": ["DSA102", "AI102", "JAVA101"],
+    "Year3_CS": ["DB01", "PM101", "PYTHON101"],
+    "Year1_DS": ["DSA101", "JAVA101", "DS01"],
+    "Year2_DS": ["MATH102", "PYTHON101", "DS01"]
   }
 }
