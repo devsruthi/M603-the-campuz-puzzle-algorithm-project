@@ -89,7 +89,7 @@ public class Main {
         System.out.println();
         System.out.println("STEP 4 : **************** BEST-EFFORT BACKTRACKING ***********************");
         System.out.println();
-        System.out.println("try leftover classes on any free hour/room; stop at the best partial timetable");
+        System.out.println("checking any free hour/room");
         System.out.println();
 
         ArrayList<Booking> show4 = new ArrayList<Booking>(finalBooked);
