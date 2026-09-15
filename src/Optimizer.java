@@ -7,7 +7,7 @@ import java.util.HashMap;
 // assign rooms to classes in a way that minimizes the empty seats.
 public class Optimizer {
 
-    static ArrayList<Booking> run(DataLoad data, GraphEngine graph) {
+    static ArrayList<Booking> run(DataLoader data, GraphEngine graph) {
         ArrayList<Booking> placed = new ArrayList<Booking>();
         for (int s = 0; s < data.slots.size(); s++) {
             ArrayList<Course> here = new ArrayList<Course>();
@@ -24,7 +24,7 @@ public class Optimizer {
         return placed;
     }
 
-    private static void oneHour(DataLoad data, String slot, ArrayList<Course> here,
+    private static void oneHour(DataLoader data, String slot, ArrayList<Course> here,
             ArrayList<Booking> placed) {
         int n = here.size();
         int m = data.rooms.size();
@@ -87,7 +87,7 @@ public class Optimizer {
         return best;
     }
 
-    private static void tightGreedy(DataLoad data, String slot, ArrayList<Course> here,
+    private static void tightGreedy(DataLoader data, String slot, ArrayList<Course> here,
             ArrayList<Booking> placed) {
         ArrayList<Course> order = new ArrayList<Course>(here);
         Collections.sort(order, new Comparator<Course>() {
@@ -121,7 +121,7 @@ public class Optimizer {
         }
     }
 
-    static ArrayList<Course> notPlaced(DataLoad data, ArrayList<Booking> placed) {
+    static ArrayList<Course> notPlaced(DataLoader data, ArrayList<Booking> placed) {
         HashMap<String, Boolean> done = new HashMap<String, Boolean>();
         for (int i = 0; i < placed.size(); i++) {
             done.put(placed.get(i).course.class_id, Boolean.TRUE);

@@ -5,18 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DataLoad {
+public class DataLoader {
     ArrayList<Course> courses = new ArrayList<Course>();
     ArrayList<Room> rooms = new ArrayList<Room>();
     ArrayList<String> slots = new ArrayList<String>();
     HashMap<String, ArrayList<String>> groups = new HashMap<String, ArrayList<String>>();
 
-    static DataLoad fromFile(String path) throws Exception {
+    static DataLoader fromFile(String path) throws Exception {
         String text = Files.readString(Path.of(path));
         @SuppressWarnings("unchecked")
-        Map<String, Object> root = (Map<String, Object>) new TinyJson(text).read();
+        Map<String, Object> root = (Map<String, Object>) new JsonParser(text).read();
 
-        DataLoad d = new DataLoad();
+        DataLoader d = new DataLoader();
 
         List<Object> classList = (List<Object>) root.get("classes");
         for (int i = 0; i < classList.size(); i++) {

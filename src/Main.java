@@ -9,7 +9,7 @@ public class Main {
             path = args[0];
         }
 
-        DataLoad data = DataLoad.fromFile(path);
+        DataLoader data = DataLoader.fromFile(path);
         System.out.println("Loaded Data (json constraints) : " + data.courses.size() + " classes, "
                 + data.rooms.size() + " rooms, "
                 + data.slots.size() + " slots");

@@ -7,7 +7,7 @@ import java.util.HashMap;
 // if it still cannot sit, we keep the best partial timetable and flag them.
 public class Backtracker {
 
-    DataLoad data;
+    DataLoader data;
     ArrayList<Booking> current;
     ArrayList<Course> left;
     HashMap<String, ArrayList<String>> groupsOf;
@@ -16,7 +16,7 @@ public class Backtracker {
     int bestCount;
     ArrayList<Booking> best;
 
-    Backtracker(DataLoad data, ArrayList<Booking> already, int nodeCap) {
+    Backtracker(DataLoader data, ArrayList<Booking> already, int nodeCap) {
         this.data = data;
         this.nodeCap = nodeCap;
         this.current = copy(already);
@@ -145,7 +145,7 @@ public class Backtracker {
         return false;
     }
 
-    static HashMap<String, ArrayList<String>> invertGroups(DataLoad data) {
+    static HashMap<String, ArrayList<String>> invertGroups(DataLoader data) {
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         for (String g : data.groups.keySet()) {
             ArrayList<String> ids = data.groups.get(g);
@@ -168,7 +168,7 @@ public class Backtracker {
         return out;
     }
 
-    static ArrayList<Course> stillLeft(DataLoad data, ArrayList<Booking> placed) {
+    static ArrayList<Course> stillLeft(DataLoader data, ArrayList<Booking> placed) {
         HashMap<String, Boolean> done = new HashMap<String, Boolean>();
         for (int i = 0; i < placed.size(); i++) {
             done.put(placed.get(i).course.class_id, Boolean.TRUE);

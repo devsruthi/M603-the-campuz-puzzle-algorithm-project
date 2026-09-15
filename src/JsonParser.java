@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TinyJson {
+public class JsonParser {
     private String s;
     private int i;
 
-    TinyJson(String s) {
+    JsonParser(String s) {
         this.s = s;
         this.i = 0;
     }

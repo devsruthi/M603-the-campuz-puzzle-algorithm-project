@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class GreedySolver {
 
-    static ArrayList<Booking> run(DataLoad data) {
+    static ArrayList<Booking> run(DataLoader data) {
         ArrayList<Course> order = new ArrayList<Course>(data.courses);
         Collections.sort(order, new Comparator<Course>() {
             public int compare(Course a, Course b) {
@@ -46,7 +46,7 @@ public class GreedySolver {
         return booked;
     }
 
-    static ArrayList<Course> notBooked(DataLoad data, ArrayList<Booking> booked) {
+    static ArrayList<Course> notBooked(DataLoader data, ArrayList<Booking> booked) {
         HashSet<String> done = new HashSet<String>();
         for (int i = 0; i < booked.size(); i++) {
             done.add(booked.get(i).course.class_id);

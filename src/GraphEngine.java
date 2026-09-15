@@ -7,13 +7,13 @@ import java.util.HashMap;
 
 public class GraphEngine {
 
-    DataLoad data;
+    DataLoader data;
     int n;
     boolean[][] edge;
     int[] degree;
     int[] colour; // -1 = no free timeslot left
 
-    GraphEngine(DataLoad data) {
+    GraphEngine(DataLoader data) {
         this.data = data;
         this.n = data.courses.size();
         this.edge = new boolean[n][n];
