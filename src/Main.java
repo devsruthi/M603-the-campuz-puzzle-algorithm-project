@@ -89,16 +89,36 @@ public class Main {
         System.out.println();
         System.out.println("STEP 4 : **************** BEST-EFFORT BACKTRACKING ***********************");
         System.out.println();
-        System.out.println("Resolved classes : " + finalBooked.size()+ "   |   " + "Unscheduled classes : " + unresolved.size());
+        System.out.println("try leftover classes on any free hour/room; stop at the best partial timetable");
         System.out.println();
-        System.out.println("---------------- CONFLICT REPORT -----------------------------------------");
-        System.out.println(); 
+
         ArrayList<Booking> show4 = new ArrayList<Booking>(finalBooked);
         Collections.sort(show4, new Comparator<Booking>() {
             public int compare(Booking a, Booking b) {
                 return a.course.class_id.compareTo(b.course.class_id);
             }
         });
+
+        System.out.println(pad("class", 12) + "  " + pad("timeslot", 16) + "  " + pad("room", 6) + "  waste");
+        System.out.println("----------------------------------------------------------");
+        for (int i = 0; i < show4.size(); i++) {
+            Booking b = show4.get(i);
+            System.out.println(pad(b.course.class_id, 12)
+                    + "  " + pad(b.slot, 16)
+                    + "  " + pad(b.room.room_id, 6)
+                    + "  wasted : " + b.waste);
+        }
+        for (int i = 0; i < unresolved.size(); i++) {
+            Course c = unresolved.get(i);
+            System.out.println(pad(c.class_id, 12) + "  " + pad("UNSCHEDULED", 16)
+                    + "  " + pad("N/A", 6) + "  wasted : N/A");
+        }
+        System.out.println();
+        System.out.println("Resolved classes : " + finalBooked.size() + "   |   "
+                + "Unscheduled classes : " + unresolved.size());
+        System.out.println();
+        System.out.println("---------------- CONFLICT REPORT -----------------------------------------");
+        System.out.println();
         for (int i = 0; i < show4.size(); i++) {
             Booking b = show4.get(i);
             System.out.println("Scheduled    " + pad(b.course.class_id, 10)
