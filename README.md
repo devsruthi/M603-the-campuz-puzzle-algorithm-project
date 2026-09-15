@@ -13,8 +13,8 @@ src/GreedySolver.java
 src/GraphEngine.java
 src/Optimizer.java
 src/Backtracker.java
-src/DataLoad.java
-src/TinyJson.java
+src/DataLoader.java
+src/JsonParser.java
 src/Course.java
 src/Room.java
 src/Booking.java
