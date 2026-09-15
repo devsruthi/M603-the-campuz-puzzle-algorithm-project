@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 
 // Stage 2: Graph Engine (Conflict Graph + Coloring)
-// classes that share a professor or a student group cannot sit in the same hour.
 
 public class GraphEngine {
 

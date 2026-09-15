@@ -4,6 +4,22 @@ Java implementation of the M603 Advanced Algorithms individual project: a four-s
 
 **Repository:** https://github.com/devsruthi/the-campuz-puzzle-algorithm-project
 
+## Project layout
+
+```
+data/constraints.json
+src/Main.java
+src/GreedySolver.java
+src/GraphEngine.java
+src/Optimizer.java
+src/Backtracker.java
+src/DataLoad.java
+src/TinyJson.java
+src/Course.java
+src/Room.java
+src/Booking.java
+```
+
 ## How to run
 
 ```bash
@@ -94,19 +110,3 @@ A university manager would use the leftover list as follows:
 3. **Spread isolated lectures** — recolour degree-0 vertices across Friday instead of stacking them on Monday, so R-101 is not exhausted before backtracking starts.
 
 Until one of those changes is made, publish the 15-class timetable and flag **SEC01** for manual intervention.
-
-## Project layout
-
-```
-data/constraints.json
-src/Main.java
-src/GreedySolver.java
-src/GraphEngine.java
-src/Optimizer.java
-src/Backtracker.java
-src/DataLoad.java
-src/TinyJson.java
-src/Course.java
-src/Room.java
-src/Booking.java
-```
