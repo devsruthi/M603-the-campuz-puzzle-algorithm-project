@@ -36,7 +36,7 @@
   "student_groups": {
     "Year1_CS": ["DSA101", "MATH101", "AI101"],
     "Year2_CS": ["DSA102", "AI102", "JAVA101"],
-    "Year3_CS": ["DB01", "PM101", "PYTHON101"],
+    "Year1_AI": ["DB01", "PM101", "PYTHON101"],
     "Year1_DS": ["DSA101", "JAVA101", "DS01"],
     "Year2_DS": ["MATH102", "PYTHON101", "DS01"]
   }
